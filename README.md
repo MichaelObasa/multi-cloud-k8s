@@ -27,7 +27,8 @@ Deployed app (Azure AKS LoadBalancer IP):
 ## 🚀 Deployment Steps
 
 ### 1. Provision EKS and AKS
-```bash
+
+'''bash
 cd aws-eks
 terraform init && terraform apply
 
@@ -36,30 +37,18 @@ terraform init && terraform apply
 
 ---
 
-**### 2. Buidl and Push Docker Image**
+### 2. Build & Push Docker Image 
+
 cd ../docker-app
 docker build -t michael2282/azure-app:v1 .
 docker push michael2282/azure-app:v1
 
 ---
 
-**### 3. Deploy app to AKS**
+### 3. Deploy to AKS
+
 az aks get-credentials --resource-group azure-k8s-rg --name azure-aks-cluster
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
-
-## 📈 Monitoring Setup
-Prometheus and Grafana were integrated using Helm Charts. Dashboards were configured to observe node metrics, pods, and system health across both EKS and AKS.
-
-##💡 Lessons Learned
-- IAM permissions can slow you down fast on AWS.
-- GitHub Actions YAML config requires patience and precise trigger logic.
-- Managing secrets securely across two clouds is trickier than expected.
-
----
-
-🤝 Contributions & Feedback
-Open to suggestions, improvements, or collabs!
-Feel free to fork, open issues, or drop me a message.
 
 ---
