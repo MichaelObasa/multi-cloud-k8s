@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: azure-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: azure-app
+  template:
+    metadata:
+      labels:
+        app: azure-app
+    spec:
+      containers:
+      - name: azure-app
+        image: michael2282/azure-app:v1
+        ports:
+        - containerPort: 80
