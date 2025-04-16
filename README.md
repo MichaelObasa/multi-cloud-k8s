@@ -52,8 +52,14 @@ kubectl apply -f service.yaml
 Prometheus and Grafana were integrated using Helm Charts. Dashboards were configured to observe node metrics, pods, and system health across both EKS and AKS.
 
 ##💡 Lessons Learned
-IAM permissions can slow you down fast on AWS.
+- IAM permissions can slow you down fast on AWS.
+- GitHub Actions YAML config requires patience and precise trigger logic.
+- Managing secrets securely across two clouds is trickier than expected.
 
-GitHub Actions YAML config requires patience and precise trigger logic.
+---
 
-Managing secrets securely across two clouds is trickier than expected.
+🤝 Contributions & Feedback
+Open to suggestions, improvements, or collabs!
+Feel free to fork, open issues, or drop me a message.
+
+---
